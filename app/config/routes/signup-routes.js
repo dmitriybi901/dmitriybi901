@@ -15,9 +15,10 @@ module.exports = function(app) {
   **/
   app.get('/signup', function(req, res) {
     res.render('signup', {
-      title: 'Your title',
-      message: 'Your Message',
-      userName: (req.user) ? req.user.username : undefined,
+      title: 'mobileApp - WSO2',
+      message: 'Sign up',
+      //userName: (req.user) ? req.user.username : undefined,
+      userName: undefined,
       flashMessage: req.flash('flashMessage')
     });
   });
@@ -35,11 +36,12 @@ module.exports = function(app) {
   /**
    * Display Signup Form
   **/
-  app.get('/logout', function(req, res) {
-    res.render('signup', {
-      title: 'Your title',
-      message: 'Your Message',
-      userName: (req.user) ? req.user.username : undefined,
+  app.post('/signout', function(req, res) {
+    res.render('index', {
+      title: 'mobileApp - WSO2',
+      message: 'Mobile Applications',
+      //userName: (req.user) ? req.user.username : undefined,
+      userName: undefined,
       flashMessage: req.flash('flashMessage')
     });
   });

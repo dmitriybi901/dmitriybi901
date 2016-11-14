@@ -1,0 +1,56 @@
+include ./layouts/header.jade
+div.container-fluid.page-wrap
+	div.row
+		div.col-md-3
+		div.col-md-6
+			h1.Title!= message
+	div.row
+		div.col-md-3
+		div.col-md-6
+			table(border='1').table
+				thead
+					tr
+						th #
+						th start
+						th end
+						th schedule
+				tbody(id="mng_batches_tbl")
+					each batch, i in batches
+						tr
+							td= i+1
+							td= batch.start
+							td= batch.end
+							td= batch.schedule
+	div.row
+		div.col-md-3
+		div.col-md-6
+			dov.row
+				div.col-md-6
+					input(type="submit" value="View Ads")
+				div.col-md-6
+					input(type="submit" value="Delete")
+
+	div.row
+		div.col-md-3
+		div.col-md-6
+			table(border='1').table
+				thead
+					tr
+						th #
+						th start
+						th end
+						th schedule
+				tbody
+					each batch, i in batches
+						tr
+							td= i+1
+							td= batch.start
+							td= batch.end
+							td= batch.schedule
+	div.row
+		div.col-md-3
+		div.col-md-6
+			a(href="/addBatch") Add Batch
+
+include ./layouts/footer.jade
+script(src="/js/pageCtrl/manage_batch_in.js")

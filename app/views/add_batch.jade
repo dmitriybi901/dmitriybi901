@@ -1,0 +1,46 @@
+include ./layouts/header.jade
+div.container-fluid.page-wrap
+	div.row
+		div.col-md-3
+		div.col-md-6
+			h1.Title!= message
+	div.row
+		form(name="updateBatch", action="updateBatch", method="post")
+			div.row
+				div.col-md-4
+				div.col-md-4
+					div.row
+						div.col-md-1.col-md-offset-1
+							p start:
+						div.col-md-1.col-md-offset-1
+							input(type="datetime-local", name="start", value='', placeholder="start")
+			div.row
+				div.col-md-4
+				div.col-md-4
+					div.row
+						div.col-md-1.col-md-offset-1
+							p end:
+						div.col-md-1.col-md-offset-1
+							input(type="datetime-local", name="end", value='', placeholder="end")
+			div.row
+				div.col-md-4
+				div.col-md-4
+					div.row
+						div.col-md-1.col-md-offset-1
+							p schedule:
+						div.col-md-1.col-md-offset-1
+							input(type="text", name="schedule", value='', placeholder="schedule")
+
+			div.row
+				div.col-md-4
+				div.col-md-4
+					div.row
+						div.col-md-1.col-md-offset-1
+							input(type="submit" value="Save" id="add_batch_save_btn")
+						div.col-md-1.col-md-offset-1
+							a(href="/manageBatches") Cancel
+
+include ./layouts/footer.jade
+
+script(src="/js/pageCtrl/add_batch_in.js")
+	

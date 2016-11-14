@@ -6,4 +6,7 @@ module.exports = function(app) {
   require('./signup-routes')(app);
 
   // Add future routes here
+  //=== pages routes ===
+  require('./pages-routes')(app);
+  //=====
 }

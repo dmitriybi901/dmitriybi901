@@ -23,7 +23,7 @@ module.exports = function(salt) {
         if (bcrypt.hashSync(password, salt) !== rows[0].password) {
           return done(null, false, req.flash('flashMessage', 'Invalid login details'));
         }
-
+        
         return done(null, rows[0]);
       })
   }));

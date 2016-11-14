@@ -1,0 +1,37 @@
+include ./layouts/header.jade
+div.container-fluid.page-wrap
+	div.row
+		div.col-md-3
+		div.col-md-6
+			h1.Title!= message
+	div.row
+		div.col-md-3
+		div.col-md-6
+			table(border='1').table
+				thead
+					tr
+						th ID
+						th title
+						th text
+						th thumbnail
+						th client
+						th update/delete
+				tbody
+
+					tr
+						td 1
+						td 1
+						td 1
+						td 1
+						td 1
+						td 1
+	div.row
+		div.col-md-4
+		div.col-md-4
+			div.row
+				div.col-md-1.col-md-offset-1
+					input(type="submit" value="Create")
+
+
+              
+include ./layouts/footer.jade

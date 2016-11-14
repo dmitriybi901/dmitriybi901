@@ -5,16 +5,16 @@ html, body {
   height: 100%;
 }
 .page-wrap {
-  min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -142px;
+  min-height: 81.5%;
+  /* equal to footer height 
+  margin-bottom: -142px;*/
 }
 .page-wrap:after {
   content: "";
   display: block;
 }
 footer, .page-wrap:after {
-  height: 142px;
+  height: 80px;
 }
 footer {
   background-color: #222;
@@ -29,6 +29,10 @@ footer {
   width: 300px;
   padding: 25px;
 }
+.signout-form {
+  width: 150px;
+  padding: 25px;
+}
 input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -39,12 +43,12 @@ input[type="password"] {
 .container-header{
     background: #252525;
     height: 60px;
-    border: none;
-    border-radius: 0;
-    border-bottom: solid 1px #000;
+    width:1170px
 }
 .container-footer{
     background-color: #ababab;
-
+}
+.logo_image{
+  margin-top:5px;
 }
 /* //===== */

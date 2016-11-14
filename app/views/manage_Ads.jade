@@ -1,0 +1,49 @@
+include ./layouts/header.jade
+div.container-fluid.page-wrap
+	div.row
+		div.col-md-3
+		div.col-md-6
+			h1.Title!= message
+	div.row
+		div.col-md-4
+		div.col-md-4
+			div.row
+				div.col-md-1.col-md-offset-1
+					p title:
+				div.col-md-1.col-md-offset-1
+					input(type="text",value='', placeholder="title")
+	div.row
+		div.col-md-4
+		div.col-md-4
+			div.row
+				div.col-md-1.col-md-offset-1
+					p client:
+				div.col-md-1.col-md-offset-1
+					input(type="text",value='', placeholder="client")
+	div.row
+		div.col-md-4
+		div.col-md-4
+			div.row
+				div.col-md-1.col-md-offset-1
+					p description:
+				div.col-md-1.col-md-offset-1
+					input(type="text",value='', placeholder="description")
+	div.row
+		div.col-md-4
+		div.col-md-4
+			div.row
+				div.col-md-1.col-md-offset-1
+					p upload:
+				div.col-md-1.col-md-offset-1
+					input(type="text",value='', placeholder="upload")
+	div.row
+		div.col-md-4
+		div.col-md-4
+			div.row
+				div.col-md-1.col-md-offset-1
+					input(type="submit" value="Create")
+				div.col-md-1.col-md-offset-1
+					input(type="submit" value="Cancel")
+
+
+include ./layouts/footer.jade
