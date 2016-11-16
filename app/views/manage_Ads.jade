@@ -5,45 +5,55 @@ div.container-fluid.page-wrap
 		div.col-md-6
 			h1.Title!= message
 	div.row
-		div.col-md-4
-		div.col-md-4
+		form(name="updateAds", action="updateAds", method="post")
 			div.row
-				div.col-md-1.col-md-offset-1
-					p title:
-				div.col-md-1.col-md-offset-1
-					input(type="text",value='', placeholder="title")
-	div.row
-		div.col-md-4
-		div.col-md-4
+				div.col-md-4
+				div.col-md-4
+					div.row
+						div.col-md-1.col-md-offset-1
+							p 
+						div.col-md-1.col-md-offset-1
+							input(type="hidden", name="ads_edit_id", value=ads_edit_id, placeholder="ads_edit_id")
 			div.row
-				div.col-md-1.col-md-offset-1
-					p client:
-				div.col-md-1.col-md-offset-1
-					input(type="text",value='', placeholder="client")
-	div.row
-		div.col-md-4
-		div.col-md-4
+				div.col-md-4
+				div.col-md-4
+					div.row
+						div.col-md-1.col-md-offset-1
+							p title:
+						div.col-md-1.col-md-offset-1
+							input(type="text", name="title", value=ads_title, placeholder="title")
 			div.row
-				div.col-md-1.col-md-offset-1
-					p description:
-				div.col-md-1.col-md-offset-1
-					input(type="text",value='', placeholder="description")
-	div.row
-		div.col-md-4
-		div.col-md-4
+				div.col-md-4
+				div.col-md-4
+					div.row
+						div.col-md-1.col-md-offset-1
+							p text:
+						div.col-md-1.col-md-offset-1
+							input(type="text", name="text", value=ads_text, placeholder="client")
 			div.row
-				div.col-md-1.col-md-offset-1
-					p upload:
-				div.col-md-1.col-md-offset-1
-					input(type="text",value='', placeholder="upload")
-	div.row
-		div.col-md-4
-		div.col-md-4
+				div.col-md-4
+				div.col-md-4
+					div.row
+						div.col-md-1.col-md-offset-1
+							p thumbnail:
+						div.col-md-1.col-md-offset-1
+							input(type="text", name="thumbnail", value=ads_thumbnail, placeholder="description")
 			div.row
-				div.col-md-1.col-md-offset-1
-					input(type="submit" value="Create")
-				div.col-md-1.col-md-offset-1
-					input(type="submit" value="Cancel")
+				div.col-md-4
+				div.col-md-4
+					div.row
+						div.col-md-1.col-md-offset-1
+							p client:
+						div.col-md-1.col-md-offset-1
+							input(type="text", name="client", value=ads_client, placeholder="upload")
+			div.row
+				div.col-md-4
+				div.col-md-4
+					div.row
+						div.col-md-1.col-md-offset-1
+							input(type="submit" value="Save")
+						div.col-md-1.col-md-offset-1
+							a(href="/adsListing") Cancel
 
 
 include ./layouts/footer.jade

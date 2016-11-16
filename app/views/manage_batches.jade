@@ -1,4 +1,5 @@
 include ./layouts/header.jade
+
 div.container-fluid.page-wrap
 	div.row
 		div.col-md-3
@@ -10,14 +11,14 @@ div.container-fluid.page-wrap
 			table(border='1').table
 				thead
 					tr
-						th #
+						th #ID
 						th start
 						th end
 						th schedule
 				tbody(id="mng_batches_tbl")
 					each batch, i in batches
 						tr
-							td= i+1
+							td= batch.batch_id
 							td= batch.start
 							td= batch.end
 							td= batch.schedule
@@ -26,9 +27,9 @@ div.container-fluid.page-wrap
 		div.col-md-6
 			dov.row
 				div.col-md-6
-					input(type="submit" value="View Ads")
+					input(type="button" value="View Ads" id="mng_view_ads")
 				div.col-md-6
-					input(type="submit" value="Delete")
+					input(type="button" value="Delete" id="mng_batch_del")
 
 	div.row
 		div.col-md-3
@@ -36,14 +37,14 @@ div.container-fluid.page-wrap
 			table(border='1').table
 				thead
 					tr
-						th #
+						th #ID
 						th start
 						th end
 						th schedule
 				tbody
 					each batch, i in batches
 						tr
-							td= i+1
+							td= batch.batch_id
 							td= batch.start
 							td= batch.end
 							td= batch.schedule
@@ -51,6 +52,25 @@ div.container-fluid.page-wrap
 		div.col-md-3
 		div.col-md-6
 			a(href="/addBatch") Add Batch
+	
+	div(id="dialog_batch" style="display:none")
+		p Do you want to delete really?
+
+div(id="carouselDiv", style="display:none; position: absolute; top:130px; left:300px; background-color:white")
+	div(id="adsCarousel" class = "carousel slide")
+		ol(class = "carousel-indicators")
+			each batch, i in batches
+				li(data-target="#adsCarousel", data-slide-to=i, class="active")
+
+		div(class = "carousel-inner")
+			each batch, i in batches
+				div(class = "item")
+					img(src = batch.schedule, style="width:800px;height:500px")
+
+		a(class = "carousel-control left" href = "#adsCarousel" data-slide = "prev") &lsaquo;
+		a(class = "carousel-control right" href = "#adsCarousel" data-slide = "next") &rsaquo;
+		input(type="button" value="Close" id="carouse_close" style="float:right")
 
 include ./layouts/footer.jade
+
 script(src="/js/pageCtrl/manage_batch_in.js")

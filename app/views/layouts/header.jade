@@ -5,6 +5,10 @@ html
     link(href='/css/bootstrap.min.css', rel='stylesheet')
     link(href='/css/style.css', rel='stylesheet')
 
+    script(src="/js/lib/jquery.min.js")
+    script(src="/js/lib/jquery-ui.min.js")
+    link(href='/js/lib/jquery-ui-1.11.1/jquery-ui.min.css', rel='stylesheet')
+
   body
 
     nav.navbar.navbar-inverse
@@ -35,8 +39,8 @@ html
                       a(href="/") Mobile Applications                   
                     li
                       a(href="/manageBatches") Manage Batches              
-                    li
-                      a(href="/manageAds") Manage Ads     
+                    //li
+                      a(href="/manageAds") Manage Ads//     
                     li
                       a(href="/adsListing") Ads Listing
                     li.dropdown

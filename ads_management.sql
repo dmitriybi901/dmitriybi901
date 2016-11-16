@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2016 at 11:57 AM
+-- Generation Time: Nov 16, 2016 at 12:35 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -23,6 +23,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `adslist_info`
+--
+
+CREATE TABLE `adslist_info` (
+  `ads_id` int(11) NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `text` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `thumbnail` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `client` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `adslist_info`
+--
+
+INSERT INTO `adslist_info` (`ads_id`, `title`, `text`, `thumbnail`, `client`) VALUES
+(1, 'aa', 'bb', 'cc', 'dd'),
+(2, 'aa', 'bb', 'cc', 'dd'),
+(3, '3', '3', '333', '55555');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `batches_info`
 --
 
@@ -38,8 +61,9 @@ CREATE TABLE `batches_info` (
 --
 
 INSERT INTO `batches_info` (`batch_id`, `start`, `end`, `schedule`) VALUES
-(20, '2016-11-09T16:06', '2016-11-24T11:02', '345'),
-(21, '2016-10-11T18:34', '2016-11-08T15:05', '456');
+(20, '2016-11-09T16:06', '2016-11-24T11:02', '/img/twitter_logo_2012.png'),
+(21, '2016-10-11T18:34', '2016-11-08T15:05', '/img/wso2-logo-small.png'),
+(22, '2016-11-16T17:55', '2016-11-22T15:03', '/img/appm_logo.png');
 
 -- --------------------------------------------------------
 
@@ -66,6 +90,12 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 --
 
 --
+-- Indexes for table `adslist_info`
+--
+ALTER TABLE `adslist_info`
+  ADD PRIMARY KEY (`ads_id`);
+
+--
 -- Indexes for table `batches_info`
 --
 ALTER TABLE `batches_info`
@@ -82,10 +112,15 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `adslist_info`
+--
+ALTER TABLE `adslist_info`
+  MODIFY `ads_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
 -- AUTO_INCREMENT for table `batches_info`
 --
 ALTER TABLE `batches_info`
-  MODIFY `batch_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `batch_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `users`
 --
